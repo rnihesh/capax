@@ -36,23 +36,23 @@ struct BatteryViewModelTests {
         #expect(vm.adapter.isConnected == false)
     }
 
-    @Test func pollSurfacesConnectedDevices() {
+    @Test func pollSurfacesConnectedDevices() async {
         let device = IOSDeviceBattery(udid: "udid-1", designCapacity: 3300, fullChargeCapacity: 3000, cycleCount: 100)
         let vm = BatteryViewModel(
             macSource: StubMacSource(result: nil),
             iosReader: StubIOSReader(state: .connected([device]))
         )
-        vm.pollDevices()
+        await vm.pollDevices()
         #expect(vm.devices.count == 1)
         #expect(vm.devices.first?.udid == "udid-1")
     }
 
-    @Test func toolingMissingReflected() {
+    @Test func toolingMissingReflected() async {
         let vm = BatteryViewModel(
             macSource: StubMacSource(result: nil),
             iosReader: StubIOSReader(isToolingAvailable: false, state: .toolingMissing)
         )
-        vm.pollDevices()
+        await vm.pollDevices()
         #expect(vm.isToolingAvailable == false)
         #expect(vm.connection == .toolingMissing)
         #expect(vm.devices.isEmpty)

@@ -45,7 +45,7 @@ struct ContentView: View {
 
                 Button {
                     model.refresh()
-                    model.pollDevices()
+                    Task { await model.pollDevices() }
                 } label: {
                     Image(systemName: "arrow.clockwise")
                 }

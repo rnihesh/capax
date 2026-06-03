@@ -1,112 +1,90 @@
 # Battrix
 
-## Mac Battery Status Monitor
+**A native macOS battery monitor — for your Mac *and* your iPhone & iPad.**
 
-Battrix is a lightweight, native macOS application that provides detailed information about your MacBook's battery status and power adapter. It displays real-time data in a clean, user-friendly interface.
+Battrix reads detailed battery and power data straight from your hardware and presents it in a clean, minimal, native interface. Check battery health, capacity, cycle count, temperature, and power draw at a glance — from a menu-bar popover or a full window — and read the battery health of any connected iPhone or iPad over USB.
 
-![Dark Mode Battrix Screenshot](./Assets/dark.png)
-![Light Mode Battrix Screenshot](./Assets/light.png)
+It's everything you'd reach a tool like coconutBattery for, plus connected-device health and local history graphs, in one menu-bar-native app. Fully offline. No account. No telemetry.
 
-## Download
+![Battrix — dark](./Assets/dark.png)
+![Battrix — light](./Assets/light.png)
 
-- 💾 [Battrix-Beta.dmg](https://github.com/rnihesh/battrix/releases/download/v1.0.0-beta/Battrix-Beta.dmg)
-
+> Screenshots above show an earlier build and will be refreshed for the new UI.
 
 ## Features
 
-- **Real-time Battery Monitoring**:
-  - Current charge percentage with visual indicator
-  - Charging status and power flow indicators
-  - Battery health percentage
-  - Current capacity, max capacity, and design capacity
+### Your Mac
+- **Battery health** — current full-charge capacity vs. factory design capacity, shown as one clear hero metric with a custom gauge.
+- **Capacity** — full charge, design, and current charge (mAh).
+- **Condition** — cycle count, temperature, instantaneous power (W), voltage, amperage.
+- **Power adapter** — wattage, name, manufacturer, voltage, current, serial.
+- **Identity** — battery serial and ID.
 
-- **Detailed Battery Information**:
-  - Cycle count
-  - Power consumption (watts)
-  - Voltage and amperage readings
-  - Temperature monitoring
-  - Maximum discharge current
+### Your iPhone & iPad
+- Connect a device over **USB** to read its **battery health, cycle count, full-charge & design capacity, charge level, and temperature** — the numbers Apple buries or doesn't show at all.
+- Honest, explicit states: connect a device, trust the computer, or install the tools — Battrix always tells you what it needs, and **never fakes or "repairs" a health number.**
 
-- **Power Adapter Details**:
-  - Wattage information
-  - Adapter name and manufacturer
-  - Voltage and current specifications
-  - Serial number
-  - Connection status
+### History
+- Battrix records samples locally while it runs and charts **health, capacity, cycle count, and temperature trends** over time with Swift Charts.
+- All history stays on your device.
 
-- **User-Friendly Interface**:
-  - Clean, native macOS design
-  - Visual battery level indicator with color coding
-    - Green: Charging
-    - Blue: Good charge level (>50%)
-    - Orange: Medium charge level (20-50%)
-    - Red: Low charge level (<20%)
-  - Organized information sections
-  - Detailed pop-up information panels
-
-- **Additional Functionality**:
-  - Copy all battery data to clipboard
-  - Manual refresh with animation
-  - Helpful icons for different battery metrics
+### Menu bar
+- A always-glanceable menu-bar item shows live charge % and watts, with a popover summary and a button to open the full window.
 
 ## Requirements
 
-- macOS 10.15 (Catalina) or later
-- MacBook with battery (MacBook, MacBook Air, or MacBook Pro)
+- macOS 15.5 or later
+- A Mac with a battery (for Mac readings) and/or a USB-connected iPhone/iPad (for device readings)
 
-## Installation
+## Install
 
-### From Release
+### From a release
+1. Download the latest `Battrix.dmg` from [Releases](https://github.com/rnihesh/battrix/releases).
+2. Drag **Battrix** to Applications and launch it.
 
-1. Download the latest release from [GitHub Releases](https://github.com/rnihesh/battrix/releases)
-2. Drag Battrix.app to your Applications folder
-3. Launch from Applications or using Spotlight
+Release builds bundle the device-reading tools — no extra setup for iPhone/iPad support.
 
-### Building from Source
-
-1. Clone the repository
+### Build from source
+1. Clone and open:
    ```bash
    git clone https://github.com/rnihesh/battrix.git
    cd battrix
-   ```
-
-2. Open the project in Xcode
-   ```bash
    open Battrix.xcodeproj
    ```
+2. Build & run (⌘R).
+3. For iPhone/iPad reading in a source build, install the device tools once:
+   ```bash
+   brew install libimobiledevice
+   ```
+   Battrix finds them automatically (bundled first, then Homebrew/`PATH`).
 
-3. Build the application (⌘+B) and run (⌘+R)
+## How it works
 
-## How It Works
-
-Battrix uses Apple's IOKit framework to access low-level battery and power information directly from your Mac's hardware. The application:
-
-1. Connects to the "AppleSmartBattery" service through IOKit
-2. Retrieves battery properties from the system registry
-3. Processes and formats the raw data into user-friendly information
-4. Updates the UI with real-time values
-5. Calculates derived metrics like battery health and power consumption
+- **Mac battery** comes from the IOKit `AppleSmartBattery` service. Battrix reads the raw registry properties and computes health (`AppleRawMaxCapacity ÷ DesignCapacity`), charge, and power locally.
+- **iPhone/iPad battery** is read over USB using [libimobiledevice](https://libimobiledevice.org): Battrix queries the device's own `AppleSmartBattery` IORegistry entry through the diagnostics relay (with an `AppleARMPMUCharger` fallback for iPhone 7 and older) and computes health from the raw capacity values. The device must be unlocked and set to **trust** this computer.
+- **History** is stored locally with SwiftData and charted with Swift Charts.
 
 ## Privacy
 
-Battrix operates completely offline and does not collect or transmit any data. All battery information is read locally from your system and remains on your device.
+Battrix is fully offline. It reads battery data locally and keeps it on your device — no collection, no transmission, no account.
+
+## Roadmap
+
+- Wi-Fi reading for paired iOS devices (cable-free)
+- iCloud history sync across your Macs
+- Per-device low-battery notifications
+
+## Architecture
+
+See [`CLAUDE.md`](./CLAUDE.md) for a map of the codebase and [`docs/`](./docs) for the requirements and implementation plan.
 
 ## Contributing
 
-Contributions are welcome! Feel free to:
-
-- Report bugs
-- Suggest features
-- Submit pull requests
+Bug reports, feature ideas, and pull requests are welcome.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Apple's IOKit framework for providing access to battery information
-- SwiftUI for the modern user interface
+MIT — see [LICENSE](./LICENSE).
 
 ---
 

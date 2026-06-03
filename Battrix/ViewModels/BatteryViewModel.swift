@@ -34,7 +34,7 @@ final class BatteryViewModel {
 
     func start() {
         refresh()
-        pollDevices()
+        Task { await pollDevices() }
         timer?.invalidate()
         let t = Timer.scheduledTimer(withTimeInterval: liveInterval, repeats: true) { [weak self] _ in
             Task { @MainActor in self?.onTick() }
@@ -50,7 +50,7 @@ final class BatteryViewModel {
     private func onTick() {
         refresh()
         tick += 1
-        if tick % iosPollEveryNTicks == 0 { pollDevices() }
+        if tick % iosPollEveryNTicks == 0 { Task { await pollDevices() } }
     }
 
     /// Pull a fresh Mac reading and record history.
@@ -66,9 +66,11 @@ final class BatteryViewModel {
         recordHistory()
     }
 
-    /// Poll connected iOS devices (separate cadence).
-    func pollDevices() {
-        connection = iosReader.poll()
+    /// Poll connected iOS devices off the main actor (spawns subprocesses), then apply on main.
+    func pollDevices() async {
+        let reader = iosReader
+        let state = await Task.detached(priority: .utility) { reader.poll() }.value
+        connection = state
         recordDeviceHistory()
     }
 

@@ -1,8 +1,9 @@
 import Foundation
 
 /// Abstraction over "read a connected iOS device's battery". Allows the view model to be driven by
-/// a stub in tests/previews and by `LibimobiledeviceReader` in production.
-protocol IOSDeviceReader {
+/// a stub in tests/previews and by `LibimobiledeviceReader` in production. `Sendable` so polling
+/// (which spawns subprocesses) can run off the main actor.
+protocol IOSDeviceReader: Sendable {
     /// Whether the underlying tooling is available at all.
     var isToolingAvailable: Bool { get }
     /// Poll currently-connected devices and return an honest connection state.
