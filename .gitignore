@@ -48,3 +48,7 @@ GoogleService-Info.plist
 
 # Release artifacts
 Battrix.dmg
+
+# Internal docs / planning (not shipped in repo)
+docs/
+CLAUDE.md

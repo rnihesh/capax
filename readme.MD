@@ -74,10 +74,6 @@ Battrix is fully offline. It reads battery data locally and keeps it on your dev
 - iCloud history sync across your Macs
 - Per-device low-battery notifications
 
-## Architecture
-
-See [`CLAUDE.md`](./CLAUDE.md) for a map of the codebase and [`docs/`](./docs) for the requirements and implementation plan.
-
 ## Contributing
 
 Bug reports, feature ideas, and pull requests are welcome.
