@@ -135,7 +135,7 @@ Phased. Phase 1 = foundation + Mac excellence (ships standalone). Phase 2 = iOS 
 
 ### Phase 1 — Foundation & Mac battery
 
-- [ ] **Unit 1: Project hygiene & structure**
+- [x] **Unit 1: Project hygiene & structure**
 
 **Goal:** Clean slate — remove dead code/sandbox, organize files, no debug noise.
 
@@ -156,7 +156,7 @@ Phased. Phase 1 = foundation + Mac excellence (ships standalone). Phase 2 = iOS 
 
 **Verification:** `xcodebuild ... build` succeeds with no Core Data, no sandbox entitlement, no `print()` in shipped code.
 
-- [ ] **Unit 2: Typed Mac battery model + service**
+- [x] **Unit 2: Typed Mac battery model + service**
 
 **Goal:** Port `getBatteryStats()` into a typed `MacBatteryService` returning `MacBattery` + `AdapterInfo`, preserving every existing key-fallback.
 
@@ -182,7 +182,7 @@ Phased. Phase 1 = foundation + Mac excellence (ships standalone). Phase 2 = iOS 
 
 **Verification:** Unit tests green; service returns a populated `MacBattery` on a real Mac run; no `print` output.
 
-- [ ] **Unit 3: View model + refresh orchestration**
+- [x] **Unit 3: View model + refresh orchestration**
 
 **Goal:** `@Observable BatteryViewModel` owning current readings + a refresh timer feeding the UI.
 
@@ -205,7 +205,7 @@ Phased. Phase 1 = foundation + Mac excellence (ships standalone). Phase 2 = iOS 
 
 **Verification:** Tests green; manual refresh updates UI; timer stops on window close.
 
-- [ ] **Unit 4: Redesigned main window UI (Mac)**
+- [x] **Unit 4: Redesigned main window UI (Mac)**
 
 **Goal:** Premium Summary view — hero gauge + sectioned cards. Replace the entire current `ContentView` body.
 
@@ -226,7 +226,7 @@ Phased. Phase 1 = foundation + Mac excellence (ships standalone). Phase 2 = iOS 
 
 ### Phase 2 — iOS device battery
 
-- [ ] **Unit 5: iOS device model + reader protocol + libimobiledevice impl**
+- [x] **Unit 5: iOS device model + reader protocol + libimobiledevice impl**
 
 **Goal:** Read a connected iPhone/iPad battery over USB via Process-invoked `idevice*` tools.
 
@@ -255,7 +255,7 @@ Phased. Phase 1 = foundation + Mac excellence (ships standalone). Phase 2 = iOS 
 
 **Verification:** Parsing tests green against fixtures; with tools installed + a trusted device on a real Mac, a real iPhone's health/cycles display.
 
-- [ ] **Unit 6: iOS device UI panel + connection states**
+- [x] **Unit 6: iOS device UI panel + connection states**
 
 **Goal:** Honest, polished iOS device section in the window + device cards.
 
@@ -275,7 +275,7 @@ Phased. Phase 1 = foundation + Mac excellence (ships standalone). Phase 2 = iOS 
 
 ### Phase 3 — History, menu bar, polish
 
-- [ ] **Unit 7: History persistence + Swift Charts trends**
+- [x] **Unit 7: History persistence + Swift Charts trends**
 
 **Goal:** Local sampling + trend graphs (health/capacity/cycles/temperature).
 
@@ -298,7 +298,7 @@ Phased. Phase 1 = foundation + Mac excellence (ships standalone). Phase 2 = iOS 
 
 **Verification:** Tests green; charts render real trend lines after the app accumulates samples.
 
-- [ ] **Unit 8: Menu-bar extra + popover**
+- [x] **Unit 8: Menu-bar extra + popover**
 
 **Goal:** Menu-bar-native live status + popover summary.
 
@@ -316,7 +316,7 @@ Phased. Phase 1 = foundation + Mac excellence (ships standalone). Phase 2 = iOS 
 
 **Verification:** Menu-bar item shows live %/watts; popover renders + opens window; both reflect the same readings.
 
-- [ ] **Unit 9: Repo polish & release readiness**
+- [x] **Unit 9: Repo polish & release readiness**
 
 **Goal:** Make the repo exemplary and the app releasable.
 
