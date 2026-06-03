@@ -1,40 +1,51 @@
-# Distribution & Notarization
+# Distribution (open-source, no paid Apple account)
 
-Battrix ships as a **notarized DMG** (direct download), not through the Mac App Store. This is required because the app is **not sandboxed** — it spawns the libimobiledevice helper tools and reaches USB-connected iOS devices, neither of which the App Store sandbox permits.
+Battrix ships as an **ad-hoc-signed `.dmg`** — no Mac App Store, no paid Apple Developer ID, no notarization. The app is **not sandboxed** (it spawns the bundled libimobiledevice tools and reaches USB devices). Trust comes from the source being public, not from Apple's signature.
 
-## Entitlements
-
-`Battrix/Battrix.entitlements`:
-- **No** `com.apple.security.app-sandbox`.
-- `com.apple.security.cs.disable-library-validation` — allows the bundled helper tools/dylibs to load under the hardened runtime.
-- **Hardened runtime stays ON** (`ENABLE_HARDENED_RUNTIME = YES`) so the build can be notarized.
-
-## Bundling the iOS device tools
-
-For release builds, bundle the libimobiledevice CLI tools so users need no setup:
-
-1. Obtain the tools and their dylibs (e.g. via Homebrew, then collect with `otool -L`):
-   - Binaries: `idevice_id`, `ideviceinfo`, `idevicediagnostics`
-   - Dylibs they link: `libimobiledevice`, `libimobiledevice-glue`, `libplist`, `libusbmuxd`, `libtatsu`, `libssl`/`libcrypto` (OpenSSL), etc.
-2. Place them under `Battrix.app/Contents/Resources/idevice/` (add a Copy Files build phase, or a packaging script).
-3. Rewrite the dylib load paths to `@loader_path`/`@executable_path` with `install_name_tool` so they resolve inside the bundle.
-4. **Code-sign every binary and dylib** with the Developer ID, then sign the app.
-
-`LibimobiledeviceReader` already looks in `Contents/Resources/idevice/` first, then falls back to `/opt/homebrew/bin`, `/usr/local/bin`, `/usr/bin` — so source builds work with `brew install libimobiledevice` and release builds work with the bundled copy.
-
-## Notarize & staple
+## One command
 
 ```bash
-# Archive / build a Release app, then:
-ditto -c -k --keepParent Battrix.app Battrix.zip
-xcrun notarytool submit Battrix.zip --keychain-profile "AC_PROFILE" --wait
-xcrun stapler staple Battrix.app
-# Build the DMG from the stapled app, then staple the DMG too.
+brew install libimobiledevice     # one-time: the tools to bundle
+scripts/make-release-dmg.sh       # → Battrix.dmg
+```
+
+That builds Release, bundles the iOS tools, ad-hoc signs, and makes the DMG.
+
+## What the scripts do
+
+### `scripts/bundle-idevice.sh <Battrix.app>`
+Makes iOS-device reading work with **zero setup** on the user's Mac:
+1. Copies `idevice_id`, `ideviceinfo`, `idevicediagnostics` from Homebrew into `Battrix.app/Contents/Resources/idevice/`.
+2. **Recursively** copies every non-system dylib they link (libimobiledevice, libimobiledevice-glue, libplist, libusbmuxd, libssl, libcrypto — and anything *those* link).
+3. Rewrites all load paths to `@loader_path/...` with `install_name_tool` so the tools find their dylibs next to themselves inside the bundle (verify with `otool -L`).
+4. Ad-hoc signs every binary and dylib (`codesign --sign -`).
+
+`LibimobiledeviceReader` looks in `Contents/Resources/idevice/` first, then falls back to Homebrew/`PATH` — so bundled release builds and `brew`-based source builds both work.
+
+### `scripts/make-release-dmg.sh`
+Release build → `bundle-idevice.sh` → ad-hoc sign the whole app (with `Battrix.entitlements`, whose `disable-library-validation` lets the ad-hoc-signed dylibs load) → `hdiutil` DMG.
+
+## Gatekeeper (because it's unsigned)
+
+Without a paid Developer ID the app isn't notarized, so first launch is blocked by default. Tell users either:
+- **Right-click the app → Open** (then confirm) the first time, or
+- ```bash
+  xattr -dr com.apple.quarantine /Applications/Battrix.app
+  ```
+
+## If you later get a paid Apple Developer account
+Then you can upgrade to a trusted, double-clickable download:
+```bash
+codesign --force --deep --options runtime --timestamp \
+  --entitlements Battrix/Battrix.entitlements \
+  --sign "Developer ID Application: NAME (TEAMID)" Battrix.app
+xcrun notarytool submit Battrix.dmg --keychain-profile "AC_PROFILE" --wait
+xcrun stapler staple Battrix.dmg
 ```
 
 ## Verification boundary
 
-Mac battery logic, plist parsing, and history are unit-tested. **The iPhone/iPad USB path and the GUI must be verified on a real Mac with a trusted device connected** — they can't be exercised in CI. When validating a release, confirm:
+Mac battery logic, plist parsing, and history are unit-tested. The **iPhone/iPad USB path and the GUI must be verified on a real Mac with a trusted device** — they can't run in CI. Before publishing a DMG, confirm on a fresh/clean Mac (or one without Homebrew):
+- `Battrix.app/Contents/Resources/idevice/idevice_id -l` runs (proves the bundled dylibs resolve).
 - A trusted iPhone/iPad shows correct health & cycle count.
-- The `.toolingMissing` / `.detectedUntrusted` states render when tools are absent or the device isn't trusted.
-- The menu-bar item and window stay in sync.
+- The `.toolingMissing` / `.detectedUntrusted` states render correctly.

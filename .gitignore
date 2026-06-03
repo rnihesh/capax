@@ -45,3 +45,6 @@ GoogleService-Info.plist
 
 # Secrets (if any)
 .env
+
+# Release artifacts
+Battrix.dmg
