@@ -1,28 +1,28 @@
 # Capax
 
-**A native macOS battery monitor — for your Mac *and* your iPhone & iPad.**
+**A native macOS battery monitor, for your Mac *and* your iPhone & iPad.**
 
-Capax reads detailed battery and power data straight from your hardware and presents it in a clean, minimal, native interface. Check battery health, capacity, cycle count, temperature, and power draw at a glance — from a menu-bar popover or a full window — and read the battery health of any connected iPhone or iPad over USB.
+Capax reads detailed battery and power data straight from your hardware and presents it in a clean, minimal, native interface. Check battery health, capacity, cycle count, temperature, and power draw at a glance, from a menu-bar popover or a full window, and read the battery health of any connected iPhone or iPad over USB.
 
 It's everything you'd reach a tool like coconutBattery for, plus connected-device health and local history graphs, in one menu-bar-native app. Fully offline. No account. No telemetry.
 
-![Capax — dark](./Assets/dark.png)
-![Capax — light](./Assets/light.png)
+![Capax, dark](./Assets/dark.png)
+![Capax, light](./Assets/light.png)
 
 > Screenshots above show an earlier build and will be refreshed for the new UI.
 
 ## Features
 
 ### Your Mac
-- **Battery health** — current full-charge capacity vs. factory design capacity, shown as one clear hero metric with a custom gauge.
-- **Capacity** — full charge, design, and current charge (mAh).
-- **Condition** — cycle count, temperature, instantaneous power (W), voltage, amperage.
-- **Power adapter** — wattage, name, manufacturer, voltage, current, serial.
-- **Identity** — battery serial and ID.
+- **Battery health**: current full-charge capacity vs. factory design capacity, shown as one clear hero metric with a custom gauge.
+- **Capacity**: full charge, design, and current charge (mAh).
+- **Condition**: cycle count, temperature, instantaneous power (W), voltage, amperage.
+- **Power adapter**: wattage, name, manufacturer, voltage, current, serial.
+- **Identity**: battery serial and ID.
 
 ### Your iPhone & iPad
-- Connect a device over **USB** to read its **battery health, cycle count, full-charge & design capacity, charge level, and temperature** — the numbers Apple buries or doesn't show at all.
-- Honest, explicit states: connect a device, trust the computer, or install the tools — Capax always tells you what it needs, and **never fakes or "repairs" a health number.**
+- Connect a device over **USB** to read its **battery health, cycle count, full-charge & design capacity, charge level, and temperature**: the numbers Apple buries or doesn't show at all.
+- Honest, explicit states: connect a device, trust the computer, or install the tools, Capax always tells you what it needs, and **never fakes or "repairs" a health number.**
 
 ### History
 - Capax records samples locally while it runs and charts **health, capacity, cycle count, and temperature trends** over time with Swift Charts.
@@ -42,7 +42,7 @@ It's everything you'd reach a tool like coconutBattery for, plus connected-devic
 1. Download the latest `Capax.dmg` from [Releases](https://github.com/rnihesh/battrix/releases).
 2. Drag **Capax** to Applications and launch it.
 
-Release builds bundle the device-reading tools — no extra setup for iPhone/iPad support.
+Release builds bundle the device-reading tools, no extra setup for iPhone/iPad support.
 
 ### Build from source
 1. Clone and open:
@@ -66,7 +66,7 @@ Release builds bundle the device-reading tools — no extra setup for iPhone/iPa
 
 ## Privacy
 
-Capax is fully offline. It reads battery data locally and keeps it on your device — no collection, no transmission, no account.
+Capax is fully offline. It reads battery data locally and keeps it on your device, no collection, no transmission, no account.
 
 ## Roadmap
 
@@ -80,7 +80,9 @@ Bug reports, feature ideas, and pull requests are welcome.
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+Capax is licensed under the **GNU AGPL-3.0**. See [LICENSE](./LICENSE).
+
+Copyright (C) 2026 Nihesh Rachakonda.
 
 ---
 
