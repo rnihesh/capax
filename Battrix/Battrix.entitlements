@@ -2,9 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>com.apple.security.app-sandbox</key>
-	<true/>
-	<key>com.apple.security.files.user-selected.read-only</key>
+	<!--
+	  No app sandbox: Battrix ships as a notarized DMG (not Mac App Store) and needs to
+	  spawn the bundled libimobiledevice tools and reach USB-connected iOS devices, neither
+	  of which is permitted under the sandbox. Hardened runtime stays on (build setting) for
+	  notarization. The exception below allows the bundled helper tools to load.
+	-->
+	<key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+	<false/>
+	<key>com.apple.security.cs.disable-library-validation</key>
 	<true/>
 </dict>
 </plist>

@@ -1,17 +1,11 @@
-//
-//  BattrixTests.swift
-//  BattrixTests
-//
-//  Created by Nihesh Rachakonda on 22/06/25.
-//
-
 import Testing
 @testable import Battrix
 
+/// Placeholder suite kept @MainActor so the whole target runs serially (see MacBatteryMathTests).
+@MainActor
 struct BattrixTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    @Test func appModuleLoads() {
+        // Smoke test: the module imports and a core type constructs.
+        #expect(MacBattery.empty.healthPercent == nil)
     }
-
 }
