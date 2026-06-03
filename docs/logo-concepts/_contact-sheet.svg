@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="760" viewBox="0 0 960 760">
+  <rect width="960" height="760" fill="#F2F2F7"/>
+  <text x="480" y="58" text-anchor="middle" font-family="Helvetica, Arial" font-size="34" font-weight="700" fill="#1C1C1E">Battrix — logo concepts</text>
+
+  <!-- row 1 -->
+  <image href="01-ring.png" x="80"  y="100" width="200" height="200"/>
+  <image href="02-bolt.png" x="380" y="100" width="200" height="200"/>
+  <image href="03-battery-bolt.png" x="680" y="100" width="200" height="200"/>
+  <text x="180" y="340" text-anchor="middle" font-family="Helvetica, Arial" font-size="22" font-weight="600" fill="#1C1C1E">1 · Health Ring</text>
+  <text x="480" y="340" text-anchor="middle" font-family="Helvetica, Arial" font-size="22" font-weight="600" fill="#1C1C1E">2 · Bolt</text>
+  <text x="780" y="340" text-anchor="middle" font-family="Helvetica, Arial" font-size="22" font-weight="600" fill="#1C1C1E">3 · Battery + Bolt</text>
+
+  <!-- row 2 -->
+  <image href="04-charge-bars.png" x="80"  y="400" width="200" height="200"/>
+  <image href="05-battery-fill.png" x="380" y="400" width="200" height="200"/>
+  <image href="06-pulse-ring.png" x="680" y="400" width="200" height="200"/>
+  <text x="180" y="640" text-anchor="middle" font-family="Helvetica, Arial" font-size="22" font-weight="600" fill="#1C1C1E">4 · Charge Bars</text>
+  <text x="480" y="640" text-anchor="middle" font-family="Helvetica, Arial" font-size="22" font-weight="600" fill="#1C1C1E">5 · Battery Fill</text>
+  <text x="780" y="640" text-anchor="middle" font-family="Helvetica, Arial" font-size="22" font-weight="600" fill="#1C1C1E">6 · Pulse Ring</text>
+
+  <text x="480" y="712" text-anchor="middle" font-family="Helvetica, Arial" font-size="17" fill="#8E8E93">Pick a number — I'll generate the full AppIcon set and wire it in.</text>
+</svg>
