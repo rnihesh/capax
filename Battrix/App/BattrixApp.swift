@@ -21,7 +21,9 @@ struct BattrixApp: App {
     }
 
     var body: some Scene {
-        WindowGroup(id: "main") {
+        // Single `Window`, not `WindowGroup`: clicking "Open Battrix" from the menu bar must focus
+        // the one existing window, never spawn duplicates.
+        Window("Battrix", id: "main") {
             RootView(model: model, container: container)
                 .frame(minWidth: 420, minHeight: 560)
         }
