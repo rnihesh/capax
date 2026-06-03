@@ -6,10 +6,10 @@ Capax reads detailed battery and power data straight from your hardware and pres
 
 It's everything you'd reach a tool like coconutBattery for, plus connected-device health and local history graphs, in one menu-bar-native app. Fully offline. No account. No telemetry.
 
-![Capax, dark](./Assets/dark.png)
-![Capax, light](./Assets/light.png)
-
-> Screenshots above show an earlier build and will be refreshed for the new UI.
+| Summary | History |
+| :---: | :---: |
+| ![Summary, light mode](./Assets/summary-light.png) | ![History, light mode](./Assets/history-light.png) |
+| ![Summary, dark mode](./Assets/summary-dark.png) | ![History, dark mode](./Assets/history-dark.png) |
 
 ## Features
 
