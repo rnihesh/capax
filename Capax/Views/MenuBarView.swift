@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// The menu-bar item's label: live charge %, a charging glyph, and watts when plugged in.
-/// This is Battrix's always-glanceable edge over window-only competitors.
+/// This is Capax's always-glanceable edge over window-only competitors.
 struct MenuBarLabel: View {
     var model: BatteryViewModel
 
@@ -77,7 +77,7 @@ struct MenuBarView: View {
             Divider()
 
             HStack {
-                Button("Open Battrix") { openWindow(id: "main"); NSApp.activate(ignoringOtherApps: true) }
+                Button("Open Capax") { openWindow(id: "main"); NSApp.activate(ignoringOtherApps: true) }
                 Spacer()
                 Button("Quit") { NSApp.terminate(nil) }
             }

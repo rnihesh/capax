@@ -1,6 +1,6 @@
 import Testing
 import Foundation
-@testable import Battrix
+@testable import Capax
 
 /// Derived-metric math and IOKit dictionary parsing for the Mac battery. These are the honest
 /// numbers users rely on — divide-by-zero and missing keys must never crash or report Inf.

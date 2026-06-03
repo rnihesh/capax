@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 #
 # bundle-idevice.sh — copy the libimobiledevice CLI tools and their full dylib closure into a
-# built Battrix.app so iOS-device reading works with no Homebrew install on the user's Mac.
+# built Capax.app so iOS-device reading works with no Homebrew install on the user's Mac.
 #
 # Walks the dependency tree recursively, copies every non-system dylib into
 # Contents/Resources/idevice/, rewrites all load paths to @loader_path, and ad-hoc signs everything
 # (open-source build — no paid Apple Developer ID / notarization).
 #
-# Usage: scripts/bundle-idevice.sh /path/to/Battrix.app
+# Usage: scripts/bundle-idevice.sh /path/to/Capax.app
 #
 set -euo pipefail
 
-APP="${1:?usage: bundle-idevice.sh /path/to/Battrix.app}"
+APP="${1:?usage: bundle-idevice.sh /path/to/Capax.app}"
 [ -d "$APP" ] || { echo "error: $APP not found"; exit 1; }
 
 DEST="$APP/Contents/Resources/idevice"

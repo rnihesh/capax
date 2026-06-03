@@ -1,13 +1,13 @@
 //
-//  BattrixUITestsLaunchTests.swift
-//  BattrixUITests
+//  CapaxUITestsLaunchTests.swift
+//  CapaxUITests
 //
 //  Created by Nihesh Rachakonda on 22/06/25.
 //
 
 import XCTest
 
-final class BattrixUITestsLaunchTests: XCTestCase {
+final class CapaxUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

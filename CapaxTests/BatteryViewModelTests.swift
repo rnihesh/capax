@@ -1,6 +1,6 @@
 import Testing
 import Foundation
-@testable import Battrix
+@testable import Capax
 
 /// Stubs let us drive the view model deterministically without IOKit or device tooling.
 private struct StubMacSource: MacBatterySource {

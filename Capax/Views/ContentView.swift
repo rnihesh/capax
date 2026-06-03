@@ -52,7 +52,7 @@ struct ContentView: View {
                 .help("Refresh now")
             }
         }
-        .navigationTitle("Battrix")
+        .navigationTitle("Capax")
     }
 
     private func copyReport() {

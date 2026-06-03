@@ -98,7 +98,7 @@ struct HistoryView: View {
                 .font(.system(size: 30)).foregroundStyle(.secondary)
             Text("Not enough history yet")
                 .font(.headline)
-            Text("Battrix records a sample every few minutes while it runs. Leave it open and trends will appear here.")
+            Text("Capax records a sample every few minutes while it runs. Leave it open and trends will appear here.")
                 .font(.callout).foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)

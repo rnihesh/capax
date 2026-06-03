@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct BattrixApp: App {
+struct CapaxApp: App {
     @State private var model = BatteryViewModel()
 
     /// Local-only history store. SwiftData backs the trend charts; nothing leaves the device.
@@ -21,9 +21,9 @@ struct BattrixApp: App {
     }
 
     var body: some Scene {
-        // Single `Window`, not `WindowGroup`: clicking "Open Battrix" from the menu bar must focus
+        // Single `Window`, not `WindowGroup`: clicking "Open Capax" from the menu bar must focus
         // the one existing window, never spawn duplicates.
-        Window("Battrix", id: "main") {
+        Window("Capax", id: "main") {
             RootView(model: model, container: container)
                 .frame(minWidth: 420, minHeight: 560)
         }

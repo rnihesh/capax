@@ -1,7 +1,7 @@
 import Testing
 import Foundation
 import SwiftData
-@testable import Battrix
+@testable import Capax
 
 /// History persistence + throttling.
 ///

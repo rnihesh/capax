@@ -47,7 +47,7 @@ GoogleService-Info.plist
 .env
 
 # Release artifacts
-Battrix.dmg
+Capax.dmg
 
 # Internal docs / planning (not shipped in repo)
 docs/

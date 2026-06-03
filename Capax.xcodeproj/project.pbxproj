@@ -12,37 +12,37 @@
 			containerPortal = 3D5E31512E07B29800DADDBA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3D5E31582E07B29800DADDBA;
-			remoteInfo = Battrix;
+			remoteInfo = Capax;
 		};
 		3D5E31772E07B29900DADDBA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3D5E31512E07B29800DADDBA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3D5E31582E07B29800DADDBA;
-			remoteInfo = Battrix;
+			remoteInfo = Capax;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D5E31592E07B29800DADDBA /* Battrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Battrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D5E316C2E07B29900DADDBA /* BattrixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BattrixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D5E31762E07B29900DADDBA /* BattrixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BattrixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D5E31592E07B29800DADDBA /* Capax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capax.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D5E316C2E07B29900DADDBA /* CapaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D5E31762E07B29900DADDBA /* CapaxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapaxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3D5E315B2E07B29800DADDBA /* Battrix */ = {
+		3D5E315B2E07B29800DADDBA /* Capax */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Battrix;
+			path = Capax;
 			sourceTree = "<group>";
 		};
-		3D5E316F2E07B29900DADDBA /* BattrixTests */ = {
+		3D5E316F2E07B29900DADDBA /* CapaxTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BattrixTests;
+			path = CapaxTests;
 			sourceTree = "<group>";
 		};
-		3D5E31792E07B29900DADDBA /* BattrixUITests */ = {
+		3D5E31792E07B29900DADDBA /* CapaxUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BattrixUITests;
+			path = CapaxUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		3D5E31502E07B29800DADDBA = {
 			isa = PBXGroup;
 			children = (
-				3D5E315B2E07B29800DADDBA /* Battrix */,
-				3D5E316F2E07B29900DADDBA /* BattrixTests */,
-				3D5E31792E07B29900DADDBA /* BattrixUITests */,
+				3D5E315B2E07B29800DADDBA /* Capax */,
+				3D5E316F2E07B29900DADDBA /* CapaxTests */,
+				3D5E31792E07B29900DADDBA /* CapaxUITests */,
 				3D5E315A2E07B29800DADDBA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		3D5E315A2E07B29800DADDBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D5E31592E07B29800DADDBA /* Battrix.app */,
-				3D5E316C2E07B29900DADDBA /* BattrixTests.xctest */,
-				3D5E31762E07B29900DADDBA /* BattrixUITests.xctest */,
+				3D5E31592E07B29800DADDBA /* Capax.app */,
+				3D5E316C2E07B29900DADDBA /* CapaxTests.xctest */,
+				3D5E31762E07B29900DADDBA /* CapaxUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3D5E31582E07B29800DADDBA /* Battrix */ = {
+		3D5E31582E07B29800DADDBA /* Capax */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D5E31802E07B29900DADDBA /* Build configuration list for PBXNativeTarget "Battrix" */;
+			buildConfigurationList = 3D5E31802E07B29900DADDBA /* Build configuration list for PBXNativeTarget "Capax" */;
 			buildPhases = (
 				3D5E31552E07B29800DADDBA /* Sources */,
 				3D5E31562E07B29800DADDBA /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				3D5E315B2E07B29800DADDBA /* Battrix */,
+				3D5E315B2E07B29800DADDBA /* Capax */,
 			);
-			name = Battrix;
+			name = Capax;
 			packageProductDependencies = (
 			);
-			productName = Battrix;
-			productReference = 3D5E31592E07B29800DADDBA /* Battrix.app */;
+			productName = Capax;
+			productReference = 3D5E31592E07B29800DADDBA /* Capax.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3D5E316B2E07B29900DADDBA /* BattrixTests */ = {
+		3D5E316B2E07B29900DADDBA /* CapaxTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D5E31832E07B29900DADDBA /* Build configuration list for PBXNativeTarget "BattrixTests" */;
+			buildConfigurationList = 3D5E31832E07B29900DADDBA /* Build configuration list for PBXNativeTarget "CapaxTests" */;
 			buildPhases = (
 				3D5E31682E07B29900DADDBA /* Sources */,
 				3D5E31692E07B29900DADDBA /* Frameworks */,
@@ -131,18 +131,18 @@
 				3D5E316E2E07B29900DADDBA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				3D5E316F2E07B29900DADDBA /* BattrixTests */,
+				3D5E316F2E07B29900DADDBA /* CapaxTests */,
 			);
-			name = BattrixTests;
+			name = CapaxTests;
 			packageProductDependencies = (
 			);
-			productName = BattrixTests;
-			productReference = 3D5E316C2E07B29900DADDBA /* BattrixTests.xctest */;
+			productName = CapaxTests;
+			productReference = 3D5E316C2E07B29900DADDBA /* CapaxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3D5E31752E07B29900DADDBA /* BattrixUITests */ = {
+		3D5E31752E07B29900DADDBA /* CapaxUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D5E31862E07B29900DADDBA /* Build configuration list for PBXNativeTarget "BattrixUITests" */;
+			buildConfigurationList = 3D5E31862E07B29900DADDBA /* Build configuration list for PBXNativeTarget "CapaxUITests" */;
 			buildPhases = (
 				3D5E31722E07B29900DADDBA /* Sources */,
 				3D5E31732E07B29900DADDBA /* Frameworks */,
@@ -154,13 +154,13 @@
 				3D5E31782E07B29900DADDBA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				3D5E31792E07B29900DADDBA /* BattrixUITests */,
+				3D5E31792E07B29900DADDBA /* CapaxUITests */,
 			);
-			name = BattrixUITests;
+			name = CapaxUITests;
 			packageProductDependencies = (
 			);
-			productName = BattrixUITests;
-			productReference = 3D5E31762E07B29900DADDBA /* BattrixUITests.xctest */;
+			productName = CapaxUITests;
+			productReference = 3D5E31762E07B29900DADDBA /* CapaxUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3D5E31542E07B29800DADDBA /* Build configuration list for PBXProject "Battrix" */;
+			buildConfigurationList = 3D5E31542E07B29800DADDBA /* Build configuration list for PBXProject "Capax" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3D5E31582E07B29800DADDBA /* Battrix */,
-				3D5E316B2E07B29900DADDBA /* BattrixTests */,
-				3D5E31752E07B29900DADDBA /* BattrixUITests */,
+				3D5E31582E07B29800DADDBA /* Capax */,
+				3D5E316B2E07B29900DADDBA /* CapaxTests */,
+				3D5E31752E07B29900DADDBA /* CapaxUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		3D5E316E2E07B29900DADDBA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D5E31582E07B29800DADDBA /* Battrix */;
+			target = 3D5E31582E07B29800DADDBA /* Capax */;
 			targetProxy = 3D5E316D2E07B29900DADDBA /* PBXContainerItemProxy */;
 		};
 		3D5E31782E07B29900DADDBA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D5E31582E07B29800DADDBA /* Battrix */;
+			target = 3D5E31582E07B29800DADDBA /* Capax */;
 			targetProxy = 3D5E31772E07B29900DADDBA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -395,7 +395,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = Battrix/Battrix.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Capax/Capax.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -409,7 +409,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nihesh.Battrix;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niheshr.capax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -423,7 +423,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = Battrix/Battrix.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Capax/Capax.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -437,7 +437,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nihesh.Battrix;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niheshr.capax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -455,11 +455,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nihesh.BattrixTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niheshr.capaxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Battrix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Battrix";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capax.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Capax";
 			};
 			name = Debug;
 		};
@@ -473,11 +473,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nihesh.BattrixTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niheshr.capaxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Battrix.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Battrix";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capax.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Capax";
 			};
 			name = Release;
 		};
@@ -489,11 +489,11 @@
 				DEVELOPMENT_TEAM = R3BA854X76;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nihesh.BattrixUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niheshr.capaxUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Battrix;
+				TEST_TARGET_NAME = Capax;
 			};
 			name = Debug;
 		};
@@ -505,18 +505,18 @@
 				DEVELOPMENT_TEAM = R3BA854X76;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nihesh.BattrixUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.niheshr.capaxUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Battrix;
+				TEST_TARGET_NAME = Capax;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3D5E31542E07B29800DADDBA /* Build configuration list for PBXProject "Battrix" */ = {
+		3D5E31542E07B29800DADDBA /* Build configuration list for PBXProject "Capax" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D5E317E2E07B29900DADDBA /* Debug */,
@@ -525,7 +525,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D5E31802E07B29900DADDBA /* Build configuration list for PBXNativeTarget "Battrix" */ = {
+		3D5E31802E07B29900DADDBA /* Build configuration list for PBXNativeTarget "Capax" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D5E31812E07B29900DADDBA /* Debug */,
@@ -534,7 +534,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D5E31832E07B29900DADDBA /* Build configuration list for PBXNativeTarget "BattrixTests" */ = {
+		3D5E31832E07B29900DADDBA /* Build configuration list for PBXNativeTarget "CapaxTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D5E31842E07B29900DADDBA /* Debug */,
@@ -543,7 +543,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D5E31862E07B29900DADDBA /* Build configuration list for PBXNativeTarget "BattrixUITests" */ = {
+		3D5E31862E07B29900DADDBA /* Build configuration list for PBXNativeTarget "CapaxUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D5E31872E07B29900DADDBA /* Debug */,

@@ -5,7 +5,7 @@ import AppKit
 @MainActor
 enum BatteryReport {
     static func text(model: BatteryViewModel) -> String {
-        var lines: [String] = ["Battrix Battery Report"]
+        var lines: [String] = ["Capax Battery Report"]
 
         if let mac = model.mac {
             lines.append("\n[Mac Battery]")

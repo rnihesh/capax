@@ -3,7 +3,7 @@ import Foundation
 /// Production `IOSDeviceReader` that shells out to the libimobiledevice CLI tools.
 ///
 /// Tool resolution order:
-///   1. bundled in `Battrix.app/Contents/Resources/idevice/` (release builds)
+///   1. bundled in `Capax.app/Contents/Resources/idevice/` (release builds)
 ///   2. common Homebrew locations + `PATH` (source/dev builds)
 ///
 /// Only thin Process invocation lives here; all output parsing is in `IOSPlistParsing` and is
