@@ -39,7 +39,7 @@ It's everything you'd reach a tool like coconutBattery for, plus connected-devic
 ## Install
 
 ### From a release
-1. Download the latest `Capax.dmg` from [Releases](https://github.com/rnihesh/battrix/releases).
+1. Download the latest `Capax.dmg` from [Releases](https://github.com/rnihesh/capax/releases).
 2. Drag **Capax** to Applications and launch it.
 
 Release builds bundle the device-reading tools, no extra setup for iPhone/iPad support.
@@ -47,8 +47,8 @@ Release builds bundle the device-reading tools, no extra setup for iPhone/iPad s
 ### Build from source
 1. Clone and open:
    ```bash
-   git clone https://github.com/rnihesh/battrix.git
-   cd battrix
+   git clone https://github.com/rnihesh/capax.git
+   cd capax
    open Capax.xcodeproj
    ```
 2. Build & run (⌘R).
