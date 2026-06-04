@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capax · Battery health for Mac and iPhone</title>
+<meta name="description" content="Capax is a native macOS battery monitor for your Mac and your iPhone and iPad. Health, capacity, cycles, history graphs, and a live menu-bar readout. Minimal, offline, open source.">
+<link rel="canonical" href="https://capax.niheshr.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Capax">
+<meta property="og:url" content="https://capax.niheshr.com/">
+<meta property="og:title" content="Capax · Battery health for Mac and iPhone">
+<meta property="og:description" content="A native macOS battery monitor for your Mac and connected iPhone or iPad. Minimal, offline, open source.">
+<meta property="og:image" content="https://capax.niheshr.com/og.png">
+<meta property="og:image:secure_url" content="https://capax.niheshr.com/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Capax · Battery health for Mac and iPhone">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Capax · Battery health for Mac and iPhone">
+<meta name="twitter:description" content="A native macOS battery monitor for your Mac and connected iPhone or iPad. Minimal, offline, open source.">
+<meta name="twitter:image" content="https://capax.niheshr.com/og.png">
+<meta name="twitter:image:alt" content="Capax · Battery health for Mac and iPhone">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2334C759'/%3E%3Cpath d='M59 27 L38 55 L49 55 L41 73 L62 45 L51 45 Z' fill='white'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0c0c0d; --panel:#161618; --panel2:#1c1c1e; --line:#2a2a2c;
+    --text:#f5f5f7; --muted:#9a9aa0; --accent:#34c759; --accent2:#30d158;
+    --radius:18px; --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--text);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+  .muted{color:var(--muted)}
+  .accent{color:var(--accent2)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;backdrop-filter:saturate(160%) blur(12px);
+      background:rgba(12,12,13,.7);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;
+      max-width:var(--maxw);margin-inline:auto;padding:16px 24px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.01em}
+  .brand .mark{width:28px;height:28px;border-radius:8px}
+  nav .links{display:flex;gap:22px;font-size:14px}
+  nav .links a{color:var(--muted)} nav .links a:hover{color:var(--text)}
+
+  /* hero */
+  .hero{text-align:center;padding-block:80px 56px}
+  .icon{
+    width:120px;height:120px;border-radius:28px;margin:0 auto 28px;display:block;
+    box-shadow:0 22px 60px -18px rgba(52,199,89,.5), 0 2px 0 rgba(255,255,255,.06) inset;
+    animation:float 6s ease-in-out infinite;
+  }
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  h1{font-size:clamp(36px,6vw,62px);line-height:1.05;letter-spacing:-.03em;font-weight:700;margin-bottom:16px}
+  .tag{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:600px;margin:0 auto 32px}
+  .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:12px;
+       font-weight:600;font-size:15px;border:1px solid transparent;transition:.18s ease;cursor:pointer}
+  .btn.primary{background:linear-gradient(180deg,var(--accent2),var(--accent));color:#04210f}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(52,199,89,.6)}
+  .btn.ghost{border-color:var(--line);color:var(--text)}
+  .btn.ghost:hover{border-color:#444;background:var(--panel)}
+  .req{margin-top:18px;font-size:13px}
+
+  /* sections: vertical rhythm lives here, never on .wrap */
+  section{padding-block:60px}
+  section[id]{scroll-margin-top:76px}
+  .eyebrow{color:var(--accent2);font-size:13px;font-weight:600;letter-spacing:.08em;
+           text-transform:uppercase;text-align:center;margin-bottom:12px}
+  h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;text-align:center;
+     margin-bottom:44px;font-weight:700;line-height:1.15}
+
+  /* screenshots showcase (alternating) */
+  .showcase{display:flex;flex-direction:column;gap:72px;margin-top:8px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .row .shot{display:flex;justify-content:center}
+  .row .shot img{width:100%;max-width:380px;height:auto}
+  .row .copy h3{font-size:24px;letter-spacing:-.02em;margin-bottom:12px}
+  .row .copy p{color:var(--muted);font-size:16px;max-width:440px}
+  @media(max-width:760px){
+    .row{grid-template-columns:1fr;gap:28px;text-align:center}
+    .row .copy p{margin-inline:auto}
+    .row .shot{order:-1}            /* image always on top when stacked */
+  }
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;align-items:stretch}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+        border-radius:var(--radius);padding:26px;transition:.2s ease}
+  .card:hover{transform:translateY(-3px);border-color:#37373a}
+  .card .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;margin-bottom:16px;
+            background:rgba(52,199,89,.12);color:var(--accent2)}
+  .card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.01em}
+  .card p{color:var(--muted);font-size:14.5px}
+
+  /* strip */
+  .strip{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+         border-radius:var(--radius);padding:44px 32px;text-align:center}
+  .strip p{color:var(--muted);max-width:640px;margin:0 auto}
+  .pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13px;color:var(--muted)}
+  .pill b{color:var(--text);font-weight:600}
+
+  /* install */
+  code{font-family:ui-monospace,"SF Mono",Menlo,monospace}
+  .codeblock{background:#000;border:1px solid var(--line);border-radius:12px;padding:14px 16px;
+             color:#d6d6d8;font-size:13.5px;font-family:ui-monospace,"SF Mono",Menlo,monospace;
+             overflow:auto;max-width:680px;margin:18px auto 0}
+  .steps{max-width:680px;margin:0 auto;display:grid;gap:16px}
+  .step{display:flex;gap:14px;align-items:flex-start}
+  .step .n{flex:0 0 28px;height:28px;border-radius:50%;background:rgba(52,199,89,.14);
+           color:var(--accent2);display:grid;place-items:center;font-size:13px;font-weight:700}
+  .step p{color:var(--muted);font-size:14.5px;padding-top:2px}
+  .step b{color:var(--text);font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding-block:32px;text-align:center;color:var(--muted);font-size:13.5px}
+  footer a{color:var(--accent2)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="bolt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3BD45F"/><stop offset=".55" stop-color="#34C759"/><stop offset="1" stop-color="#248A3D"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="url(#bolt)"/><path d="M59 26 L38 55 L49 55 L41 74 L63 45 L51 45 Z" fill="#fff"/></svg>
+      Capax
+    </a>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/rnihesh/capax">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <svg class="icon" viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="url(#bolt)"/><path d="M59 26 L38 55 L49 55 L41 74 L63 45 L51 45 Z" fill="#fff"/></svg>
+    <h1>Battery health,<br>for your whole&nbsp;desk.</h1>
+    <p class="tag">A native macOS battery monitor for your Mac <span class="accent">and</span> your iPhone &amp; iPad. Minimal, glanceable, completely offline.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/rnihesh/capax/releases/latest">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/></svg>
+        Download for macOS
+      </a>
+      <a class="btn ghost" href="https://github.com/rnihesh/capax">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 0 0-2.5 15.6c.4.07.55-.17.55-.38v-1.3c-2.2.48-2.67-1.07-2.67-1.07-.36-.92-.88-1.16-.88-1.16-.72-.49.05-.48.05-.48.8.056 1.22.82 1.22.82.71 1.22 1.87.87 2.33.66.07-.51.28-.87.5-1.07-1.76-.2-3.6-.88-3.6-3.9 0-.86.3-1.57.82-2.12-.08-.2-.36-1 .08-2.1 0 0 .67-.21 2.2.81a7.6 7.6 0 0 1 4 0c1.53-1.02 2.2-.81 2.2-.81.44 1.1.16 1.9.08 2.1.51.55.82 1.26.82 2.12 0 3.03-1.85 3.7-3.61 3.9.29.24.54.72.54 1.45v2.15c0 .21.15.46.55.38A8 8 0 0 0 8 0z"/></svg>
+        View source
+      </a>
+    </div>
+    <p class="req muted">macOS 15.5+ &nbsp;·&nbsp; Free and open source &nbsp;·&nbsp; No account, no telemetry</p>
+  </div>
+</header>
+
+<section id="shots">
+  <div class="wrap">
+    <div class="eyebrow">A look inside</div>
+    <h2>Clean, native, at a glance.</h2>
+    <div class="showcase">
+      <div class="row">
+        <div class="shot">
+          <img src="summary-dark.png" alt="Capax Summary tab showing battery health, capacity and condition" loading="lazy">
+        </div>
+        <div class="copy">
+          <h3>Summary</h3>
+          <p>One hero metric: battery health, full-charge against design capacity, in a custom gauge. Below it, your charge level and the details that matter, cycle count, temperature, power, voltage, and the adapter. Honest labels, no clutter.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="copy">
+          <h3>History</h3>
+          <p>Capax logs samples locally and charts the trend. Switch between health, capacity, cycles, and temperature across 24 hours, 7 days, 30 days, or all time, with latest, min, and max at a glance. Everything stays on your device.</p>
+        </div>
+        <div class="shot">
+          <img src="history-dark.png" alt="Capax History tab showing a battery health trend chart" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="eyebrow">What it does</div>
+    <h2>Everything about your batteries.<br>Nothing you don't need.</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="16" height="10" rx="3"/><path d="M20 10v4"/><path d="M11 9l-2 3h2l-1 3"/></svg></div>
+        <h3>Your Mac</h3>
+        <p>Battery health, full-charge vs design capacity, cycle count, temperature, power, voltage, and the power adapter, all in one clean view.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+        <h3>Your iPhone &amp; iPad</h3>
+        <p>Plug in over USB to read the real battery health, cycle count, and capacity Apple hides. The tools are bundled in, so there's zero setup.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M19 9l-5 5-3-3-4 4"/></svg></div>
+        <h3>History &amp; trends</h3>
+        <p>Capax quietly logs samples and charts health, capacity, cycles, and temperature over time, all stored on your device.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M7 6h.01M11 6h6"/></svg></div>
+        <h3>Live in the menu bar</h3>
+        <p>Charge % and watts at a glance, with a popover summary. Open the full window only when you want the details.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="strip">
+      <div class="eyebrow">Honest by design</div>
+      <h2 style="margin-bottom:14px">Real numbers. Kept private.</h2>
+      <p>Capax reads straight from the hardware and shows true values. It never fakes or "repairs" a health figure. It is a read-only monitor: it changes nothing, sends nothing, and works fully offline.</p>
+      <div class="pills">
+        <span class="pill"><b>Read-only</b> &nbsp;·&nbsp; no charge tricks</span>
+        <span class="pill"><b>Offline</b> &nbsp;·&nbsp; no account</span>
+        <span class="pill"><b>Open source</b> &nbsp;·&nbsp; AGPL-3.0</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <div class="eyebrow">Install</div>
+    <h2>Up and running in a minute</h2>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><p><b>Download</b> the latest <code>Capax.dmg</code> from <a class="accent" href="https://github.com/rnihesh/capax/releases/latest">Releases</a>, open it, and drag <b>Capax</b> to Applications.</p></div>
+      <div class="step"><span class="n">2</span><p><b>First launch.</b> Because it is an open-source unsigned build, right-click the app and choose <b>Open</b>, or run the command below.</p></div>
+      <div class="step"><span class="n">3</span><p><b>For an iPhone or iPad</b>, connect it over USB, unlock it, and tap <b>Trust</b>. Its battery card appears automatically.</p></div>
+    </div>
+    <div class="codeblock">xattr -dr com.apple.quarantine /Applications/Capax.app</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Capax · made by <a href="https://github.com/rnihesh">Nihesh</a> · <a href="https://github.com/rnihesh/capax">source on GitHub</a> · AGPL-3.0</div>
+</footer>
+
+</body>
+</html>
