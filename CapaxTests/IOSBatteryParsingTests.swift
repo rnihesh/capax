@@ -2,7 +2,7 @@ import Testing
 import Foundation
 @testable import Capax
 
-/// Parsing of libimobiledevice tool output. This is the tested seam — Process invocation is thin,
+/// Parsing of libimobiledevice tool output. This is the tested seam, Process invocation is thin,
 /// the plist parsing is where correctness lives. Health is computed, never trusted from the device.
 /// `@MainActor` to keep the whole target serial (see MacBatteryMathTests for why).
 @MainActor

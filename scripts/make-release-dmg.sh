@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# make-release-dmg.sh — build a Release Capax, bundle the iOS tools, ad-hoc sign, and produce a
+# make-release-dmg.sh, build a Release Capax, bundle the iOS tools, ad-hoc sign, and produce a
 # distributable Capax.dmg.
 #
 # Open-source build: no paid Apple Developer ID, so the app is *ad-hoc signed* and NOT notarized.

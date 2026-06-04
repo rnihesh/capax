@@ -3,12 +3,12 @@ import Foundation
 @testable import Capax
 
 /// Derived-metric math and IOKit dictionary parsing for the Mac battery. These are the honest
-/// numbers users rely on — divide-by-zero and missing keys must never crash or report Inf.
+/// numbers users rely on, divide-by-zero and missing keys must never crash or report Inf.
 ///
 /// `@MainActor` so every suite in this target runs on the one main actor. Swift Testing runs tests
 /// in parallel by default; keeping them main-actor-isolated makes them effectively serial (no
 /// `await` suspension points here), which prevents the SwiftData suite from being fetched
-/// concurrently — SwiftData fetches are not safe under that concurrency and otherwise crash.
+/// concurrently, SwiftData fetches are not safe under that concurrency and otherwise crash.
 @MainActor
 struct MacBatteryMathTests {
 

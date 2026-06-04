@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# bundle-idevice.sh — copy the libimobiledevice CLI tools and their full dylib closure into a
+# bundle-idevice.sh, copy the libimobiledevice CLI tools and their full dylib closure into a
 # built Capax.app so iOS-device reading works with no Homebrew install on the user's Mac.
 #
 # Walks the dependency tree recursively, copies every non-system dylib into
 # Contents/Resources/idevice/, rewrites all load paths to @loader_path, and ad-hoc signs everything
-# (open-source build — no paid Apple Developer ID / notarization).
+# (open-source build, no paid Apple Developer ID / notarization).
 #
 # Usage: scripts/bundle-idevice.sh /path/to/Capax.app
 #
@@ -22,7 +22,7 @@ rm -rf "$DEST"; mkdir -p "$DEST"
 
 echo "→ copying tools from $BREW_BIN"
 for t in "${TOOLS[@]}"; do
-  [ -x "$BREW_BIN/$t" ] || { echo "error: $t not found — run 'brew install libimobiledevice'"; exit 1; }
+  [ -x "$BREW_BIN/$t" ] || { echo "error: $t not found, run 'brew install libimobiledevice'"; exit 1; }
   cp "$BREW_BIN/$t" "$DEST/$t"; chmod u+w "$DEST/$t"
 done
 

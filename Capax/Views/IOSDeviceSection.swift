@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Connected iPhone/iPad battery. Every connection state renders an explicit, honest panel —
+/// Connected iPhone/iPad battery. Every connection state renders an explicit, honest panel -
 /// never a silent empty. Connected devices reuse the Mac's exact visual language.
 struct IOSDeviceSection: View {
     let connection: DeviceConnection
@@ -61,7 +61,7 @@ struct IOSDeviceSection: View {
     }
 }
 
-/// A connected iOS device's battery card — same hero-ring vocabulary as the Mac, scaled down.
+/// A connected iOS device's battery card, same hero-ring vocabulary as the Mac, scaled down.
 struct IOSDeviceCard: View {
     let device: IOSDeviceBattery
 

@@ -87,7 +87,7 @@ struct HistoryView: View {
     private func stat(_ label: String, _ value: Double?) -> some View {
         VStack(alignment: .leading, spacing: 1) {
             Text(label).foregroundStyle(.secondary)
-            Text(value.map { String(format: "%.1f%@", $0, metric.unit.isEmpty ? "" : " \(metric.unit)") } ?? "—")
+            Text(value.map { String(format: "%.1f%@", $0, metric.unit.isEmpty ? "" : " \(metric.unit)") } ?? "-")
                 .monospacedDigit().fontWeight(.medium)
         }
     }

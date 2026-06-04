@@ -39,7 +39,7 @@ enum IOSPlistParsing {
         device.isCharging = entry["IsCharging"] as? Bool
     }
 
-    /// True when the IORegistry output carried no usable battery numbers — caller should try the
+    /// True when the IORegistry output carried no usable battery numbers, caller should try the
     /// `AppleARMPMUCharger` fallback entry (iPhone 7 and older).
     static func isBatteryEntryEmpty(_ data: Data) -> Bool {
         guard let root = plistDict(data) else { return true }

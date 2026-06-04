@@ -1,7 +1,7 @@
 import AppKit
 
 /// Builds a plain-text battery report and copies it to the clipboard. Used by the "copy" toolbar
-/// button — handy for sharing diagnostics or when buying/selling a used Mac.
+/// button, handy for sharing diagnostics or when buying/selling a used Mac.
 @MainActor
 enum BatteryReport {
     static func text(model: BatteryViewModel) -> String {

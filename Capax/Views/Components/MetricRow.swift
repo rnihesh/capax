@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// One aligned key/value line: SF Symbol · label · value. Values use monospaced digits so columns
-/// stay visually stable as numbers tick. Honest, technical labels — no marketing fluff.
+/// stay visually stable as numbers tick. Honest, technical labels, no marketing fluff.
 struct MetricRow: View {
     let icon: String
     let label: String

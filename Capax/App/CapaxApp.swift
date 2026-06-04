@@ -9,7 +9,7 @@ struct CapaxApp: App {
     ///
     /// Nil under XCTest: the unit-test target creates its own in-memory container, and a second
     /// container for the same `@Model` in the host process trips a SwiftData trap. When hosted by
-    /// tests we skip SwiftData entirely and render an empty view — tests drive the code directly.
+    /// tests we skip SwiftData entirely and render an empty view, tests drive the code directly.
     private let container: ModelContainer?
 
     init() {

@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// The app's visual signature: a custom-drawn ring showing the hero metric (battery health) with a
-/// large legible value in the center. Bespoke arc + smooth fill — deliberately not a stock `Gauge`.
+/// large legible value in the center. Bespoke arc + smooth fill, deliberately not a stock `Gauge`.
 struct HeroGaugeView: View {
     let percent: Double?          // 0...100, the value the ring fills to
     let centerValue: String       // big number, e.g. "92%"

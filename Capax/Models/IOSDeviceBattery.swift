@@ -1,7 +1,7 @@
 import Foundation
 
 /// Battery + identity for a connected iPhone/iPad, read over USB via libimobiledevice.
-/// Health is computed from raw capacity exactly like the Mac — we never trust a device-reported
+/// Health is computed from raw capacity exactly like the Mac, we never trust a device-reported
 /// "100%" health key and never fake/repair values.
 struct IOSDeviceBattery: Equatable, Identifiable {
     var udid: String

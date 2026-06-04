@@ -21,7 +21,7 @@ struct SummaryView: View {
     }
 }
 
-/// Shown on a Mac with no internal battery (e.g. a desktop) — honest, not a spinner forever.
+/// Shown on a Mac with no internal battery (e.g. a desktop), honest, not a spinner forever.
 struct EmptyBatteryView: View {
     var body: some View {
         VStack(spacing: 10) {

@@ -8,7 +8,7 @@ protocol MacBatterySource {
 
 /// Reads the Mac's internal battery from the IOKit `AppleSmartBattery` service.
 ///
-/// The key-fallback ladders below encode real cross-model/silicon quirks — the same precedence
+/// The key-fallback ladders below encode real cross-model/silicon quirks, the same precedence
 /// the original Capax used (e.g. `AppleRawCurrentCapacity` before `AbsoluteCapacity` before
 /// `CurrentCapacity`). Preserve precedence when changing this; different Macs expose different keys.
 struct MacBatteryService: MacBatterySource {
